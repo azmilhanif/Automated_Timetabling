@@ -1,0 +1,6 @@
+room_ID,room_Name,seating_Capacity,Proposed_Binary
+LH1,Lecture Hall 1,30,1
+LH2,Lecture Hall 2,30,10
+LR1,Lecture Room 1,30,11
+LB1,Computer Lab 1,30,100
+CR1,Computer Room 1,30,101

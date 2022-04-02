@@ -1,0 +1,6 @@
+dayID,Day,Proposed_Binary
+M,Monday,1
+T,Tuesday,10
+W,Wednesday,11
+TH,Thursday,100
+F,Friday,101

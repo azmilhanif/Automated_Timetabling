@@ -1,0 +1,16 @@
+module_Code,module_Name,Lecturer_ID,groupID,Course_ID
+5222,Database II,ST6,2D,BSC2
+6224,Computer Ethics,ST4,1A,BSC1
+4220,Computer System and Networks,ST5,2C,BSC2
+5225,Programming II,ST6,2C,BSC2
+3225,Programming I,ST6,1A,BSC1
+6008,Innovation Project,ST1,3E,BSC3
+6226,Artificial Intelligence and Machine Learning,ST6,3E,BSC3
+4202,Maths for Computing,ST3,1A,BSC1
+4201,Professional Skills for Computing,ST1,1A,BSC1
+4227,Web Technologies,ST4,1A,BSC1
+4210,User Experience,ST1,1B,BSC1
+4222,Database Management System,ST6,1B,BSC1
+5019,Experiental Learning,ST3,2C,BSC2
+5201,Data Structures and Algorithm,ST2,2D,BSC2
+5227,Web Application and Development,ST8,2D,BSC2
