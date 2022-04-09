@@ -26,14 +26,11 @@ class Class_Session(object):
         for x in mD.get_module_Code:
             self.module_ID.append(x)
 
-        for j in rM.get_id:
+        for j in rM.get_id():
             self.room_ID.append(j)
 
         for t in tM.get_timeID:
             self.time_ID.append(t)
-
-        for i in gP.get_groupSize:
-            self.number_of_Students.append(i)
 
         for z in mD.get_module_lecturer:
             self.lecturer_ID.append(z)

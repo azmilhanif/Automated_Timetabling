@@ -16,8 +16,7 @@ class Timetable(object):
         self.clashes = 1
 
         self.fitness_Score = None
-
-        # number of classes = number of groups * number of student groups
+        
         self.number_of_classes = len(mD.get_module_Code)
 
     def create_Sessions(self):
@@ -64,36 +63,6 @@ class Timetable(object):
         #     else:
         #         return acc
 
-        for x in classes:
-
-            # if a lecturer is teaching different classes at the same time
-            if x[0][0] != x[0][0] and x[0][2] == x[0][2] and x[2] == x[2]:
-                clashes += 1
-
-            # if the same group has different class at the same time
-            if x[0][0] != x[0][0] and x[0][1] == x[0][1] and x[2] == x[2]:
-                clashes += 1
-
-            # if the same group has different class at different same time
-            if x[0][0] != x[0][0] and x[0][1] == x[0][1] and x[1] != x[1] and x[2] != x[2]:
-                clashes += 1
-
-            # if there is a duplicate class at different room and different times
-            if x[0][0] == x[0][0] and x[1] != x[1] and x[2] != x[2]:
-                clashes += 1
-
-            # if there is a duplicate class at same room and sane times
-            if x[0][0] == x[0][0] and x[1] == x[1] and x[2] == x[2]:
-                clashes += 1
-
-            # if there is a duplicate class at same time different room
-            if x[0][0] == x[0][0] and x[1] != x[1] and x[2] == x[2]:
-                clashes += 1
-
-            # if there is a duplicate class at different time same room
-            if x[0][0] == x[0][0] and x[1] == x[1] and x[2] != x[2]:
-                clashes += 1
-
         self.clashes += clashes
         self.fitness_(self.clashes)
 
@@ -123,11 +92,12 @@ class Timetable(object):
     def return_timetable(self, classes, score):
         return classes, score
 
-# def main():
-#     tbl = Timetable()
-#     print(tbl.create_timetables())
-#     print(tbl.clash_Calculation(tbl.create_timetables()))
-#
-#
-# if __name__ == '__main__':
-#     main()
+
+def main():
+    tbl = Timetable()
+    print(tbl.create_timetables())
+    print(tbl.clash_Calculation(tbl.create_timetables()))
+
+
+if __name__ == '__main__':
+    main()

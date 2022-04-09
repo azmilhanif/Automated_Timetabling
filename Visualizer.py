@@ -34,9 +34,8 @@ class Visualizer:
         out = pd.Series([solution]).explode().to_frame('data').set_index(mi).reset_index() \
             .pivot_table('data', 'row', 'col', aggfunc=list, fill_value='') \
             .reindex(index=self.df.index, columns=self.df.columns, fill_value='')
-    # End of retrieved code
+        # End of retrieved code
 
         pd.set_option('max_colwidth', 800)
-      
 
         return dfi.export(out, r"output/BSC Computer Science.png")
