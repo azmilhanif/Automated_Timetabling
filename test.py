@@ -15,7 +15,6 @@ class Course:
         return hash(self.module_ID)
 
 
-
 def main():
     crs = Course()
     print(crs.__hash__())

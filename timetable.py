@@ -16,7 +16,6 @@ class Timetable(object):
         self.clashes = 1
 
         self.fitness_Score = None
-        
         self.number_of_classes = len(mD.get_module_Code)
 
     def create_Sessions(self):

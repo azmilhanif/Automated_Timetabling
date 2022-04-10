@@ -1,14 +1,26 @@
+import io
+import logging
+import os
+
 import itertools
 import random
+
+from PIL import Image
 import PySimpleGUI as sg
+import threading
+import concurrent.futures
+import subprocess
 
 import Visualizer
 import timetable
 
 tL = timetable.Timetable()
 
-layout = [[sg.Text("Hello from PySimpleGUI")], [sg.Button("OK")]]
-window = sg.Window("Computer Science: timetable_generator", layout, size=(490, 350), element_justification='c')
+layout = [[sg.Text("BSc Computer Science timetable generator")],
+          [sg.Button("Generate course timetable")],
+          [sg.Button("View generated timetable")]]
+
+window = sg.Window("Computer Science: timetable_generator", layout, size=(490, 550), element_justification='c')
 
 while True:
 
@@ -189,20 +201,32 @@ while True:
 
 
     def main():
+
         ga = GeneticAlgorithm()
         ga.initiate_Populations()
 
-
+    # ----------------------------- EVENT LOOP -----------------------------------
     while True:
-        try:
-            main()
 
-        except IndexError:
-            print("Re-Checking")
-            continue
+        event, values = window.read()
+        if event == 'Exit' or event == sg.WIN_CLOSED:
+            break
 
-    if event == "OK" or event == sg.WIN_CLOSED:
-        break
+        elif event == "Generate course timetable":
+            while True:
+                try:
+                    # main()
+                    threading.Thread(target=main(), args=(window,), daemon=True).start()
+                except IndexError:
+                    print("Re-Checking")
+                    continue
 
-window.close()
+        elif event == 'View generated timetable':
+            layout = [
+                [sg.Image(filename=r"output/BSC Computer Science.png")],
+                [sg.Button("Exit")]
+            ]
 
+            window = sg.Window("Image Viewer", layout)
+
+    window.close()
